@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './animations.css';
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .glow-border {
+    @apply border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.5)];
+  }
+  
+  .glow-border-hover {
+    @apply hover:border-blue-500/70 hover:shadow-[0_0_30px_rgba(59,130,246,0.7)];
+  }
+}
+
+@layer utilities {
+  .animate-laser-slide-1 {
+    animation: laser-slide-1 8s linear infinite;
+  }
+  .animate-laser-slide-2 {
+    animation: laser-slide-2 12s linear infinite;
+  }
+  .animate-laser-slide-3 {
+    animation: laser-slide-3 10s linear infinite;
+  }
+  .animate-cube-float {
+    animation: cube-float 6s ease-in-out infinite;
+  }
+}

@@ -1,0 +1,15 @@
+/* Background styles */
+body {
+  background-image: url('https://i.ibb.co/VxkP1QL/cyber-tech-background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Content wrapper to ensure proper z-indexing */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}

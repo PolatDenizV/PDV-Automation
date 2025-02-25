@@ -1,0 +1,11 @@
+/* ... (previous animations remain the same) ... */
+
+@keyframes robot-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* Add to your existing CSS */
+.clip-triangle {
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}

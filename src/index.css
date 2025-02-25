@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-purple-950;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .typewriter-text {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .neon-text {
+    color: #ff1f1f;
+    opacity: 0;
+    text-shadow: none;
+  }
+
+  .neon-text.animate-neon {
+    opacity: 1;
+    text-shadow: 
+      0 0 7px #ff1f1f,
+      0 0 10px #ff1f1f,
+      0 0 21px #ff1f1f,
+      0 0 42px #ff0000,
+      0 0 82px #ff0000,
+      0 0 92px #ff0000,
+      0 0 102px #ff0000,
+      0 0 151px #ff0000;
+    animation: neon-flicker 1.5s forwards;
+  }
+}
+
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 7px #ff1f1f,
+      0 0 10px #ff1f1f,
+      0 0 21px #ff1f1f,
+      0 0 42px #ff0000,
+      0 0 82px #ff0000,
+      0 0 92px #ff0000,
+      0 0 102px #ff0000,
+      0 0 151px #ff0000;
+  }
+  20%, 24%, 55% {
+    opacity: 0.7;
+    text-shadow: none;
+  }
+}
+
+@layer utilities {
+  .animate-laser-slide-1 {
+    animation: laser-slide-1 8s linear infinite;
+  }
+  .animate-laser-slide-2 {
+    animation: laser-slide-2 12s linear infinite;
+  }
+  .animate-laser-slide-3 {
+    animation: laser-slide-3 10s linear infinite;
+  }
+  .animate-cube-float {
+    animation: cube-float 6s ease-in-out infinite;
+  }
+}
