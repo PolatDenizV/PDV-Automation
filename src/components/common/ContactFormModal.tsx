@@ -10,7 +10,8 @@ const services = [
   "AI-Powered Chatbot Creation",
   "Automated Twitter Content Creation",
   "Automated Email Outreach System",
-  "Professional Website Design"
+  "Professional Website Design",
+  "Amazon Advertising Automation"
 ];
 
 export default function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
@@ -63,7 +64,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
       <div className="relative w-full max-w-2xl bg-gray-900 rounded-2xl shadow-xl">
         {/* Gradient border effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl -z-10 blur"></div>
-        
+
         {/* Close button */}
         <button
           onClick={onClose}

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { DivideIcon as LucideIcon, ChevronDown, ChevronUp } from 'lucide-react';
+import { LucideIcon, ChevronDown, ChevronUp } from 'lucide-react';
 import TypewriterText from './TypewriterText';
 import ContactFormModal from '../common/ContactFormModal';
 
@@ -13,7 +13,6 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ icon: Icon, title, description, details }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -28,34 +27,25 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
     }
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   // Get the typewriter text based on the title
   const getTypewriterText = () => {
     if (title.includes('Chatbot')) return 'Customer Interaction';
     if (title.includes('Twitter')) return 'Content Generation';
     if (title.includes('Email')) return 'Outreach';
     if (title.includes('Website')) return 'Design';
+    if (title.includes('Amazon')) return 'PPC & Reporting';
     return '';
   };
 
   return (
     <>
-      <div 
+      <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
         className="group relative h-full"
       >
         {/* Interactive Glow Effect */}
-        <div 
+        <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
             background: `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, 
@@ -67,7 +57,7 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
         {/* Card Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-purple-800/80 rounded-2xl 
           group-hover:from-purple-800/90 group-hover:to-purple-700/90 transition-all duration-500" />
-        
+
         {/* Main Content */}
         <div className="relative h-full bg-purple-950/90 backdrop-blur-xl p-8 rounded-2xl border border-purple-700/50 
           group-hover:border-red-500/50 transition-all duration-300 flex flex-col">
@@ -75,7 +65,7 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
           <div className="relative mb-6">
             <div className="absolute inset-0 bg-red-500/20 rounded-lg blur-xl transform 
               group-hover:scale-150 transition-transform duration-500" />
-            
+
             <div className="relative p-4 bg-gradient-to-br from-purple-800/80 to-purple-700/80 rounded-lg 
               border border-purple-600/50 group-hover:border-red-500/50 transition-all duration-300
               transform group-hover:-translate-y-1 flex items-center gap-4">
@@ -88,7 +78,7 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
             {title}
           </h3>
           <p className="text-gray-300 leading-relaxed mb-4 flex-grow typewriter-text">{description}</p>
-          
+
           {/* Expandable Details */}
           <div className="mt-4">
             <button
@@ -107,7 +97,7 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
                 </>
               )}
             </button>
-            
+
             {isExpanded && (
               <div className="mt-4 space-y-2 text-gray-300">
                 {details.map((detail, index) => (
@@ -129,7 +119,7 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
         </div>
       </div>
 
-      <ContactFormModal 
+      <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

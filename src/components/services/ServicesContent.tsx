@@ -1,5 +1,4 @@
-import React from 'react';
-import { MessageSquare, Twitter, Mail, Palette } from 'lucide-react';
+import { MessageSquare, Twitter, Mail, Palette, BarChart3 } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 
 const services = [
@@ -66,6 +65,22 @@ const services = [
       "• Modern UI/UX implementation",
       "• Mobile-first approach"
     ]
+  },
+  {
+    icon: BarChart3,
+    title: "Amazon Advertising Automation",
+    description: "Managed Amazon Sponsored Ads campaign creation, optimization, and reporting using the Amazon Advertising API. Supports Sponsored Products, Sponsored Brands, and Sponsored Display for authorized seller accounts.",
+    path: "/services/amazon-ads",
+    details: [
+      "• PPC • Reporting • Automation",
+      "• Managed Amazon Sponsored Ads creation",
+      "• Automated bidding and optimization",
+      "• Performance reporting and analytics",
+      "• Sponsored Products support",
+      "• Sponsored Brands and Display support",
+      "• Authorized seller account integration",
+      "• API-driven campaign management"
+    ]
   }
 ];
 
@@ -85,8 +100,8 @@ export default function ServicesContent() {
           Cutting-edge AI solutions to transform your business operations
         </p>
       </div>
-      
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
