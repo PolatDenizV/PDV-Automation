@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Twitter } from 'lucide-react';
 import ContactFormModal from '../common/ContactFormModal';
 
@@ -34,21 +34,23 @@ export default function HeroContent() {
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-          From social media dominance to personalized outreach, I deliver 24/7 automation 
+          From social media dominance to personalized outreach, I deliver 24/7 automation
           that scales your brand effortlessly.
         </p>
-        <button
-          onClick={() => setIsModalOpen(true)}
+        <a
+          href="https://x.com/PolatskiD"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 
             text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-red-600 
             hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <Twitter className="w-5 h-5" />
           Contact Me
-        </button>
+        </a>
       </div>
 
-      <ContactFormModal 
+      <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

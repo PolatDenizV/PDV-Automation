@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bot, Linkedin, Twitter, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -14,10 +13,10 @@ export default function Footer() {
             <a href="#" className="hover:text-blue-400 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href="https://x.com/PolatskiD" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
               <Twitter className="w-6 h-6" />
             </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href="mailto:polat@pdvautomations.com" className="hover:text-blue-400 transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>

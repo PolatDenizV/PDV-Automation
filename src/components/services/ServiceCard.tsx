@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { LucideIcon, ChevronDown, ChevronUp } from 'lucide-react';
 import TypewriterText from './TypewriterText';
 import ContactFormModal from '../common/ContactFormModal';
@@ -13,17 +13,14 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ icon: Icon, title, description, details }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      cardRef.current.style.setProperty('--mouse-x', `${x}px`);
+      cardRef.current.style.setProperty('--mouse-y', `${y}px`);
     }
   };
 
@@ -37,21 +34,24 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
     return '';
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
-        className="group relative h-full"
+        className="group relative h-full transition-transform duration-300"
+        style={{ willChange: 'transform' }}
       >
         {/* Interactive Glow Effect */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            background: `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, 
+            background: `radial-gradient(circle 100px at var(--mouse-x, 0px) var(--mouse-y, 0px), 
               rgba(239, 68, 68, 0.15), 
               rgba(239, 68, 68, 0) 70%)`
-          }}
+          } as React.CSSProperties}
         />
 
         {/* Card Background */}
