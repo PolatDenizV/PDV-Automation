@@ -1,4 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#111827"/>
-  <text x="50" y="65" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#ef4444" text-anchor="middle">PDV</text>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="15" fill="#0f172a"/>
+  <!-- AI Bot Head / Brain Abstract -->
+  <path d="M30 40 L50 25 L70 40 L70 65 L50 80 L30 65 Z" fill="none" stroke="url(#grad)" stroke-width="4"/>
+  <circle cx="50" cy="50" r="10" fill="url(#grad)" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <!-- Connection lines -->
+  <line x1="50" y1="25" x2="50" y2="40" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+  <line x1="30" y1="40" x2="45" y2="45" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+  <line x1="70" y1="40" x2="55" y2="45" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
 </svg>

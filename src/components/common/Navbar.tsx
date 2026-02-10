@@ -7,12 +7,12 @@ export default function Navbar() {
         <Link to="/" className="text-white font-mono text-sm">
           PDV Automation
         </Link>
-        <a
-          href="mailto:polat@pdvautomations.com"
+        <button
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           className="bg-red-500 text-white px-3 py-1 rounded-md text-xs font-semibold hover:bg-red-600 transition-colors"
         >
           Contact
-        </a>
+        </button>
       </div>
     </nav>
   );

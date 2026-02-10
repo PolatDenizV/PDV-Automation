@@ -46,7 +46,7 @@ export default function HeroContent() {
             hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <Twitter className="w-5 h-5" />
-          Contact Me
+          DM Me on Twitter
         </a>
       </div>
 

@@ -33,9 +33,12 @@ export default function Footer() {
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 Contact Us
-              </a>
+              </button>
             </div>
           </div>
         </div>

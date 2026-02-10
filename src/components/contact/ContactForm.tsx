@@ -15,7 +15,6 @@ export default function ContactForm() {
             transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
         >
           Contact Me
-          <Twitter className="w-5 h-5" />
         </button>
         <a
           href="https://x.com/PolatskiD"
@@ -30,7 +29,7 @@ export default function ContactForm() {
         </a>
       </div>
 
-      <ContactFormModal 
+      <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
