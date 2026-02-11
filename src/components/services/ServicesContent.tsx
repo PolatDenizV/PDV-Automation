@@ -89,15 +89,38 @@ export default function ServicesContent() {
     <div className="relative z-10 container mx-auto px-4">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text 
-          bg-gradient-to-r from-red-400 via-red-500 to-red-600 mb-8">
-          Conquer Daily Must-Do's with Automation
+          bg-gradient-to-r from-red-400 via-red-500 to-red-600 mb-12">
+          Conquer Daily Must-Do's
         </h2>
+
+        {/* AI/Automation Intro Section */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20 text-left">
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <h3 className="text-xl font-bold text-red-400 mb-4">Automation</h3>
+            <p className="text-gray-400 leading-relaxed">
+              Automation is a way to automate manual tasks, however alone it still requires human intervention for intelligence requiring tasks. It's like a body without a brain.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <h3 className="text-xl font-bold text-blue-400 mb-4">AI</h3>
+            <p className="text-gray-400 leading-relaxed">
+              AI is the brain that can handle tasks that require thinking, research, creation, and decision making. But without tools, it's stuck in the limitations of traditional interfaces. It's like a brain without arms and legs.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <h3 className="text-xl font-bold text-purple-400 mb-4">AI Automation</h3>
+            <p className="text-gray-400 leading-relaxed">
+              Where the line is crossed and both combine. It handles repetitive, resource-consuming tasks, outperforming human efficiency at a fraction of the cost—directly making you money.
+            </p>
+          </div>
+        </div>
+
         <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text 
           bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-6">
-          Services Offered
+          See some possibilities below
         </h3>
-        <p className="text-xl text-gray-400">
-          Cutting-edge AI solutions to transform your business operations
+        <p className="text-xl text-gray-400 italic">
+          High-performance solutions for the modern age
         </p>
       </div>
 
