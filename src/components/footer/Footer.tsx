@@ -1,4 +1,3 @@
-import React from 'react';
 import FooterLogo from './FooterLogo';
 import FooterSocial from './FooterSocial';
 import FooterLinks from './FooterLinks';
@@ -6,11 +5,11 @@ import FooterCopyright from './FooterCopyright';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-transparent text-white py-12">
       {/* Subtle gradient overlay */}
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-500/5"></div>
-        
+
         {/* Content */}
         <div className="container mx-auto px-4 relative">
           {/* Upper Footer */}
