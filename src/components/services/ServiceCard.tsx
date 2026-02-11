@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { LucideIcon } from 'lucide-react';
+import EmailTooltip from '../common/EmailTooltip';
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -32,11 +33,14 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onClick={handleFlip}
-      className="group relative h-[400px] perspective cursor-pointer"
+      className="group relative transition-all duration-500 ease-in-out perspective cursor-pointer"
+      style={{
+        minHeight: '400px',
+      }}
     >
-      <div className={`relative w-full h-full transition-all duration-700 preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+      <div className={`relative w-full h-full transition-all duration-700 preserve-3d flex flex-col ${isFlipped ? 'rotate-y-180' : ''}`}>
         {/* Front Face */}
-        <div className="absolute inset-0 backface-hidden flex flex-col">
+        <div className={`absolute inset-0 backface-hidden flex flex-col transition-opacity duration-300 ${isFlipped ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           {/* Interactive Glow Effect (Only on Front) */}
           <div
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
@@ -78,30 +82,34 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
         </div>
 
         {/* Back Face */}
-        <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-800 to-purple-900 rounded-2xl border border-red-500/50" />
+        <div className={`relative w-full h-full backface-hidden rotate-y-180 flex flex-col rounded-2xl overflow-hidden transition-opacity duration-500 ${isFlipped ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-800 to-purple-900 border border-red-500/50" />
 
-          <div className="relative h-full p-8 flex flex-col justify-between">
-            <div className="space-y-3">
-              <h4 className="text-xl font-bold text-red-400 mb-4">Key Features</h4>
-              {details.map((detail, index) => (
-                <p key={index} className="text-gray-200 text-sm flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  {detail}
-                </p>
-              ))}
+          <div className="relative p-8 flex flex-col h-full bg-purple-950/40 backdrop-blur-sm">
+            <div className={`space-y-4 transition-all duration-700 delay-200 ${isFlipped ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <h4 className="text-xl font-bold text-red-400 mb-6">Key Features</h4>
+              <div className="space-y-3">
+                {details.map((detail, index) => (
+                  <p key={index} className="text-gray-200 text-sm flex items-start gap-2">
+                    <span className="text-red-500 mt-1">•</span>
+                    {detail}
+                  </p>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-purple-700/50">
-              <a
-                href={`mailto:polat@pdvautomations.com?subject=Inquiry about ${title}`}
-                onClick={(e) => e.stopPropagation()}
-                className="w-full inline-flex items-center justify-center bg-gradient-to-r from-red-500 to-red-600 
-                  text-white px-6 py-3 rounded-xl font-bold hover:from-red-600 hover:to-red-700 
-                  transition-all duration-300 shadow-lg shadow-red-500/20"
-              >
-                Inquire Now
-              </a>
+            <div className={`mt-auto pt-8 border-t border-purple-700/50 transition-all duration-700 delay-400 ${isFlipped ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <EmailTooltip>
+                <a
+                  href={`mailto:polat@pdvautomations.com?subject=Inquiry about ${title}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="w-full inline-flex items-center justify-center bg-gradient-to-r from-red-500 to-red-600 
+                    text-white px-6 py-3 rounded-xl font-bold hover:from-red-600 hover:to-red-700 
+                    transition-all duration-300 shadow-lg shadow-red-500/20"
+                >
+                  Inquire Now
+                </a>
+              </EmailTooltip>
             </div>
           </div>
         </div>

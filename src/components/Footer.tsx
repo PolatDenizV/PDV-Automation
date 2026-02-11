@@ -1,4 +1,5 @@
 import { Bot, Linkedin, Twitter, Mail } from 'lucide-react';
+import EmailTooltip from './common/EmailTooltip';
 
 export default function Footer() {
   return (
@@ -16,9 +17,11 @@ export default function Footer() {
             <a href="https://x.com/PolatskiD" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
               <Twitter className="w-6 h-6" />
             </a>
-            <a href="mailto:polat@pdvautomations.com" className="hover:text-blue-400 transition-colors">
-              <Mail className="w-6 h-6" />
-            </a>
+            <EmailTooltip>
+              <a href="mailto:polat@pdvautomations.com" className="hover:text-blue-400 transition-colors">
+                <Mail className="w-6 h-6" />
+              </a>
+            </EmailTooltip>
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8">
