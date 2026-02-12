@@ -15,10 +15,10 @@ export default function Hero() {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-gray-900" style={{ willChange: 'transform' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-gray-900" style={{ willChange: 'transform' }}></div>
 
       {/* Radial Fade */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]"></div>
 
       {/* Background Effects */}
       <LaserBeams />

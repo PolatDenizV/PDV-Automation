@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function FuturisticLogo() {
   return (
@@ -7,12 +6,12 @@ export default function FuturisticLogo() {
         {/* Glowing background effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 
           rounded-full blur-3xl"></div>
-        
+
         {/* Logo container with glow effect */}
         <div className="relative w-full h-full p-4">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full 
             backdrop-blur-sm"></div>
-          <img 
+          <img
             src="/logo.jpg"
             alt="PDV Automation"
             className="w-full h-full object-contain rounded-full transform hover:scale-105 transition-transform 

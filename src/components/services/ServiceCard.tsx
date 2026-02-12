@@ -34,14 +34,13 @@ export default function ServiceCard({ icon: Icon, title, description, details, c
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onClick={handleFlip}
-      className="group relative transition-all duration-500 ease-in-out perspective cursor-pointer"
-      style={{
-        minHeight: '400px',
-      }}
+      className="group relative transition-all duration-500 ease-in-out perspective cursor-pointer flex flex-col"
     >
-      <div className={`relative w-full h-full transition-all duration-700 preserve-3d flex flex-col ${isFlipped ? 'rotate-y-180' : ''}`}>
+      <div className={`relative w-full h-full transition-all duration-700 preserve-3d flex flex-col ${isFlipped ? 'rotate-y-180' : ''}`}
+        style={{ minHeight: '450px' }}
+      >
         {/* Front Face */}
-        <div className={`absolute inset-0 backface-hidden flex flex-col transition-opacity duration-300 ${isFlipped ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`relative w-full h-full backface-hidden flex flex-col transition-opacity duration-300 ${isFlipped ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           {/* Interactive Glow Effect (Only on Front) */}
           <div
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
@@ -72,7 +71,7 @@ export default function ServiceCard({ icon: Icon, title, description, details, c
             <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors">
               {title}
             </h3>
-            <p className="text-gray-300 leading-relaxed line-clamp-3">
+            <p className="text-gray-300 leading-relaxed">
               {description}
             </p>
 
@@ -83,7 +82,7 @@ export default function ServiceCard({ icon: Icon, title, description, details, c
         </div>
 
         {/* Back Face */}
-        <div className={`relative w-full h-full backface-hidden rotate-y-180 flex flex-col rounded-2xl overflow-hidden transition-opacity duration-500 ${isFlipped ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`absolute inset-0 w-full h-full backface-hidden rotate-y-180 flex flex-col rounded-2xl overflow-hidden transition-opacity duration-500 ${isFlipped ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-800 to-purple-900 border border-red-500/50" />
 
           <div className="relative p-8 flex flex-col h-full bg-purple-950/40 backdrop-blur-sm">
