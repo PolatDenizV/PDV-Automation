@@ -52,7 +52,7 @@ export default function ScrollVideoBackground() {
 
         const drawFrame = () => {
             // Lerp frame index for smoothness
-            frameIndexRef.current += (targetFrameIndexRef.current - frameIndexRef.current) * 0.15;
+            frameIndexRef.current += (targetFrameIndexRef.current - frameIndexRef.current) * 0.1;
             const index = Math.round(frameIndexRef.current);
             const img = framesRef.current[index];
 
