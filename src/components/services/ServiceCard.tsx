@@ -8,9 +8,10 @@ interface ServiceCardProps {
   description: string;
   details: string[];
   path: string;
+  cta?: string;
 }
 
-export default function ServiceCard({ icon: Icon, title, description, details }: ServiceCardProps) {
+export default function ServiceCard({ icon: Icon, title, description, details, cta }: ServiceCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -107,7 +108,7 @@ export default function ServiceCard({ icon: Icon, title, description, details }:
                     text-white px-6 py-3 rounded-xl font-bold hover:from-red-600 hover:to-red-700 
                     transition-all duration-300 shadow-lg shadow-red-500/20"
                 >
-                  Inquire Now
+                  {cta || "Inquire Now"}
                 </a>
               </EmailTooltip>
             </div>

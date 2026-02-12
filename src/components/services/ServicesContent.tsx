@@ -4,24 +4,23 @@ import ServiceCard from './ServiceCard';
 const services = [
   {
     icon: MessageSquare,
-    title: "AI-Powered Chatbot Creation",
-    description: "Custom chatbots that go beyond basic interactions, featuring CRM integration, lead generation, appointment booking, and smart product recommendations.",
+    title: "AI-Powered Chatbot Systems (That Actually Close Leads)",
+    description: "Custom AI chatbots integrated directly into your business stack — capturing leads, booking calls, answering questions, and handing off to humans only when needed.",
     path: "/services/chatbot-creation",
+    cta: "Inquire About This System →",
     details: [
-      "• CRM Integration for seamless customer data management",
-      "• Lead generation and qualification",
-      "• Appointment and call booking functionality",
-      "• Information collection and processing",
-      "• Human handoff capabilities",
-      "• Telegram bot integrations",
+      "• CRM-connected lead capture",
+      "• Appointment & call booking",
       "• Smart product recommendations",
-      "• 24/7 automated customer support"
+      "• Human handoff logic",
+      "• Telegram & web integrations",
+      "• 24/7 automated support"
     ]
   },
   {
     icon: Twitter,
-    title: "Automated Twitter Content Creation",
-    description: "Boost engagement and brand visibility with AI-generated posts, short videos, and images. Runs 24/7, creating up to a post every 15 minutes—at a fraction of the cost of a social media manager.",
+    title: "Automated Twitter Content Engine",
+    description: "AI-generated tweets, images, and short videos posted automatically — up to one post every 15 minutes — optimized for engagement and brand voice, running 24/7 without a social media manager. Built to avoid spam patterns and maintain organic-looking activity.",
     path: "/services/twitter-automation",
     details: [
       "• AI-powered content generation",
@@ -30,13 +29,13 @@ const services = [
       "• Brand voice customization",
       "• Analytics and performance tracking",
       "• Hashtag optimization",
-      "• Viral content detection"
+      "• Organic activity protection"
     ]
   },
   {
     icon: Mail,
-    title: "Automated Email Outreach System",
-    description: "Perfect for B2B businesses: Send hundreds of personalized, concise emails daily with a single click. The AI analyzes prospects' profiles and creates icebreakers based on their specific content, mimicking genuine effort to know them—a key component in any successful marketing attempt. Achieve 25% response rates with no social proof requirements. Includes email warmup to maximize deliverability and prevent spam flags.",
+    title: "AI-Personalized Cold Email Outreach (B2B)",
+    description: "Send hundreds of genuinely personalized emails per day. The AI analyzes each prospect’s online presence and writes context-aware icebreakers that feel manually researched — without needing social proof. Typical response rates: ~25%, including warm-up and deliverability protection.",
     path: "/services/email-automation",
     details: [
       "• AI-driven personalization",
@@ -58,26 +57,19 @@ const services = [
       "• Automated lead capture system",
       "• Instant follow-up with AI email automation",
       "• AI Phone agent integration for immediate response",
-      "• 70% higher conversion rate with instant follow-up",
       "• Customer data collection and management",
-      "• Personalized engagement automation",
-      "• 24/7 automated response system",
-      "• Modern UI/UX implementation",
-      "• Mobile-first approach"
+      "• Modern UI/UX implementation"
     ]
   },
   {
     icon: BarChart3,
     title: "Amazon Advertising Automation",
-    description: "Managed Amazon Sponsored Ads campaign creation, optimization, and reporting using the Amazon Advertising API. Supports Sponsored Products, Sponsored Brands, and Sponsored Display for authorized seller accounts.",
+    description: "Managed Amazon Sponsored Ads creation, optimization, and reporting using the Amazon Advertising API — built for sellers who want systematic, data-driven PPC without daily manual work. Works only with authorized seller accounts. No black-hat tactics.",
     path: "/services/amazon-ads",
     details: [
-      "• PPC • Reporting • Automation",
       "• Managed Amazon Sponsored Ads creation",
       "• Automated bidding and optimization",
       "• Performance reporting and analytics",
-      "• Sponsored Products support",
-      "• Sponsored Brands and Display support",
       "• Authorized seller account integration",
       "• API-driven campaign management"
     ]
@@ -90,7 +82,7 @@ export default function ServicesContent() {
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text 
           bg-gradient-to-r from-red-400 via-red-500 to-red-600 mb-12">
-          Conquer Daily Must-Do's
+          Automation handles execution. AI handles thinking.
         </h2>
 
         {/* AI/Automation Intro Section */}
@@ -98,29 +90,29 @@ export default function ServicesContent() {
           <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <h3 className="text-xl font-bold text-red-400 mb-4">Automation</h3>
             <p className="text-gray-400 leading-relaxed">
-              Automation is a way to automate manual tasks, however alone it still requires human intervention for intelligence requiring tasks. It's like a body without a brain.
+              Alone, automation still needs humans.
             </p>
           </div>
           <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <h3 className="text-xl font-bold text-blue-400 mb-4">AI</h3>
             <p className="text-gray-400 leading-relaxed">
-              AI is the brain that can handle tasks that require thinking, research, creation, and decision making. But without tools, it's stuck in the limitations of traditional interfaces. It's like a brain without arms and legs.
+              Alone, AI is stuck behind a keyboard.
             </p>
           </div>
           <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <h3 className="text-xl font-bold text-purple-400 mb-4">AI Automation</h3>
             <p className="text-gray-400 leading-relaxed">
-              Where the line is crossed and both combine. It handles repetitive, resource-consuming tasks, outperforming human efficiency at a fraction of the cost—directly making you money.
+              AI Automation combines both — systems that think, decide, and act at scale, outperforming human efficiency while costing a fraction to run.
             </p>
           </div>
         </div>
 
         <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text 
           bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-6">
-          See some possibilities below
+          What I Build
         </h3>
-        <p className="text-xl text-gray-400 italic">
-          High-performance solutions for the modern age
+        <p className="text-xl text-gray-400">
+          High-performance AI automation systems tailored to your business — not templates, not subscriptions, not SaaS fluff.
         </p>
       </div>
 

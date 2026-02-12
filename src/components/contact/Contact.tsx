@@ -1,6 +1,7 @@
 import ContactHeader from './ContactHeader';
 import ContactForm from './ContactForm';
 import LaserEffects from './LaserEffects';
+import WhyMe from './WhyMe';
 
 export default function Contact() {
   return (
@@ -14,6 +15,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto">
           <ContactHeader />
           <ContactForm />
+          <WhyMe />
         </div>
       </div>
     </section>
