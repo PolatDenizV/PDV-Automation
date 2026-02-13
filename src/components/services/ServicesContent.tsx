@@ -4,122 +4,118 @@ import ServiceCard from './ServiceCard';
 const services = [
   {
     icon: MessageSquare,
-    title: "AI-Powered Chatbot Systems (That Actually Close Leads)",
-    description: "Custom AI chatbots integrated directly into your business stack — capturing leads, booking calls, answering questions, and handing off to humans only when needed.",
+    title: "AI Chatbot Systems",
+    description: "Custom AI agents integrated into your stack — capturing leads, booking calls, and handling 24/7 support without human intervention.",
     path: "/services/chatbot-creation",
-    cta: "Inquire About This System →",
+    cta: "Scale My Support →",
     details: [
       "• CRM-connected lead capture",
+      "• 24/7 automated support",
       "• Appointment & call booking",
-      "• Smart product recommendations",
       "• Human handoff logic",
-      "• Telegram & web integrations",
-      "• 24/7 automated support"
-    ]
+      "• Telegram & web integrations"
+    ],
+    className: "md:col-span-2" // Featured
   },
   {
     icon: Twitter,
-    title: "Automated Twitter Content Engine",
-    description: "AI-generated tweets, images, and short videos posted automatically — up to one post every 15 minutes — optimized for engagement and brand voice, running 24/7 without a social media manager. Built to avoid spam patterns and maintain organic-looking activity.",
+    title: "Twitter Engine",
+    description: "AI-generated content posted 24/7. Optimized for engagement and brand voice without a social manager.",
     path: "/services/twitter-automation",
     details: [
-      "• AI-powered content generation",
+      "• AI content generation",
       "• Automated posting schedule",
       "• Engagement optimization",
-      "• Brand voice customization",
-      "• Analytics and performance tracking",
-      "• Hashtag optimization",
-      "• Organic activity protection"
-    ]
+      "• Brand voice protection"
+    ],
+    className: "md:col-span-1"
   },
   {
     icon: Mail,
-    title: "AI-Personalized Cold Email Outreach (B2B)",
-    description: "Send hundreds of genuinely personalized emails per day. The AI analyzes each prospect’s online presence and writes context-aware icebreakers that feel manually researched — without needing social proof. Typical response rates: ~25%, including warm-up and deliverability protection.",
+    title: "Cold Email B2B",
+    description: "Send hundreds of context-aware, personalized emails daily. High response rates (~25%) without manual research.",
     path: "/services/email-automation",
     details: [
       "• AI-driven personalization",
-      "• LinkedIn Sales Navigator integration",
-      "• High-volume email campaigns",
+      "• LinkedIn integration",
       "• Email warmup protocols",
-      "• Response rate optimization",
-      "• Genuine content-based icebreakers",
-      "• Profile analysis for personalization"
-    ]
+      "• context-aware icebreakers"
+    ],
+    className: "md:col-span-1"
   },
   {
     icon: Palette,
-    title: "Professional Website Design",
-    description: "High-end, aesthetic, and professional website designs powered by AI to make your business stand out, like the one you are looking at. Front-end and back-end of your business built in 24 hours, with automated lead capture and instant follow-up system.",
+    title: "Premium Web Design",
+    description: "High-end websites built in 24 hours with automated lead capture and instant AI follow-up systems.",
     path: "/services/web-design",
     details: [
-      "• Complete business website built in 24 hours",
-      "• Automated lead capture system",
-      "• Instant follow-up with AI email automation",
-      "• AI Phone agent integration for immediate response",
-      "• Customer data collection and management",
-      "• Modern UI/UX implementation"
-    ]
+      "• 24-hour turnaround",
+      "• Automated lead capture",
+      "• AI Email/Phone agents",
+      "• Modern UI/UX stack"
+    ],
+    className: "md:col-span-2" // Featured
   },
   {
     icon: BarChart3,
-    title: "Amazon Advertising Automation",
-    description: "Managed Amazon Sponsored Ads creation, optimization, and reporting using the Amazon Advertising API — built for sellers who want systematic, data-driven PPC without daily manual work. Works only with authorized seller accounts. No black-hat tactics.",
+    title: "Amazon Ads",
+    description: "API-driven Amazon Sponsored Ads optimization. Data-driven PPC without daily manual work.",
     path: "/services/amazon-ads",
     details: [
-      "• Managed Amazon Sponsored Ads creation",
-      "• Automated bidding and optimization",
-      "• Performance reporting and analytics",
-      "• Authorized seller account integration",
-      "• API-driven campaign management"
-    ]
+      "• Automated bidding & optimization",
+      "• API-driven management",
+      "• Performance analytics",
+      "• Authorized seller integration"
+    ],
+    className: "md:col-span-3" // Full width feature
   }
 ];
 
 export default function ServicesContent() {
   return (
-    <div className="relative z-10 container mx-auto px-4">
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text 
-          bg-gradient-to-r from-red-400 via-red-500 to-red-600 mb-12">
-          Automation handles execution. AI handles thinking.
+    <div className="relative z-10 container mx-auto px-4 max-w-7xl">
+      <div className="text-center mb-24">
+        <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-gradient">
+          Automation handles execution.<br />AI handles thinking.
         </h2>
-
-        {/* AI/Automation Intro Section */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20 text-left">
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-            <h3 className="text-xl font-bold text-red-400 mb-4">Automation</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Alone, automation still needs humans.
-            </p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-            <h3 className="text-xl font-bold text-blue-400 mb-4">AI</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Alone, AI is stuck behind a keyboard.
-            </p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-            <h3 className="text-xl font-bold text-purple-400 mb-4">AI Automation</h3>
-            <p className="text-gray-400 leading-relaxed">
-              AI Automation combines both — systems that think, decide, and act at scale, outperforming human efficiency while costing a fraction to run.
-            </p>
-          </div>
-        </div>
-
-        <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text 
-          bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-6">
-          What I Build
-        </h3>
-        <p className="text-xl text-gray-400">
-          High-performance AI automation systems tailored to your business — not templates, not subscriptions, not SaaS fluff.
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium">
+          High-performance systems tailored to your business — not templates, not subscriptions, not SaaS fluff.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Bento Grid Intro */}
+      <div className="grid md:grid-cols-3 gap-6 mb-6">
+        <div className="glass-card p-8 rounded-3xl">
+          <h3 className="text-xl font-bold text-blue-400 mb-4 uppercase tracking-widest text-sm">The Problem</h3>
+          <p className="text-gray-400 leading-relaxed font-medium">
+            Standard automation is rigid and still requires human babysitting for corner cases.
+          </p>
+        </div>
+        <div className="glass-card p-8 rounded-3xl">
+          <h3 className="text-xl font-bold text-indigo-400 mb-4 uppercase tracking-widest text-sm">The Missing Piece</h3>
+          <p className="text-gray-400 leading-relaxed font-medium">
+            Isolated AI is powerful but creates more work manually copying data between tools.
+          </p>
+        </div>
+        <div className="glass-card p-8 rounded-3xl">
+          <h3 className="text-xl font-bold text-purple-400 mb-4 uppercase tracking-widest text-sm">The Solution</h3>
+          <p className="text-gray-400 leading-relaxed font-medium">
+            AI Automation links them — systems that think, decide, and act across your entire stack.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Services Bento Grid */}
+      <div className="grid md:grid-cols-3 gap-6">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
+      </div>
+
+      <div className="mt-16 text-center">
+        <h3 className="text-2xl font-bold text-gray-500 tracking-tight">
+          See some possibilities above.
+        </h3>
       </div>
     </div>
   );

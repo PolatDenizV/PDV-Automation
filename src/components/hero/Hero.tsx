@@ -3,22 +3,22 @@ import HeroContent from './HeroContent';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
+    <section className="relative min-h-screen overflow-hidden bg-slate-950">
+      {/* Background Image / Abstract Texture */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
         style={{
-          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/voiceglow-cdn/o/public%2Flkk3vaaz.jpg?alt=media&token=0b50bef7-e0aa-4919-b76e-d0eae7d12fee')`,
-          backgroundColor: '#000',
+          backgroundImage: `url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop')`,
           willChange: 'transform'
         }}
       />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-gray-900" style={{ willChange: 'transform' }}></div>
+      {/* Deep Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-slate-950/80" />
 
-      {/* Radial Fade */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]"></div>
+      {/* Radial Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
 
       {/* Background Effects */}
       <LaserBeams />
@@ -27,7 +27,7 @@ export default function Hero() {
       <HeroContent />
 
       {/* Smooth transition to services section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-900"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-slate-950 to-transparent" />
     </section>
   );
 }

@@ -3,15 +3,13 @@ import EmailTooltip from '../common/EmailTooltip';
 
 export default function ContactForm() {
   return (
-    <div>
-      <div className="flex flex-col sm:flex-row gap-4">
+    <div className="max-w-2xl mx-auto">
+      <div className="flex flex-col sm:flex-row gap-6">
         <div className="flex-1">
           <EmailTooltip>
             <a
               href="mailto:polat@pdvautomations.com"
-              className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white 
-                py-4 px-8 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 
-                transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+              className="w-full relative group inline-flex items-center justify-center gap-3 bg-white text-black py-5 px-8 rounded-2xl font-bold hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             >
               Contact Me via Email
               <Mail className="w-5 h-5" />
@@ -22,12 +20,10 @@ export default function ContactForm() {
           href="https://x.com/PolatskiD"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white 
-            py-4 px-8 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 
-            transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+          className="flex-1 relative group inline-flex items-center justify-center gap-3 bg-blue-600 text-white py-5 px-8 rounded-2xl font-bold hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]"
         >
           DM Me on Twitter
-          <Twitter className="w-5 h-5" />
+          <Twitter className="w-5 h-5 fill-current" />
         </a>
       </div>
     </div>
