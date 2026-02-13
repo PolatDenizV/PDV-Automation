@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import HomePage from './pages/HomePage';
 import TwitterAutomationPage from './pages/TwitterAutomationPage';
 import EmailAutomationPage from './pages/EmailAutomationPage';
@@ -20,6 +21,7 @@ function App() {
           </Routes>
         </Router>
       </div>
+      <Analytics />
     </>
   );
 }
