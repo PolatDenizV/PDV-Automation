@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, Bot, Sparkles } from 'lucide-react';
+import { ArrowRight, Bot } from 'lucide-react';
 
 export default function Header() {
   return (

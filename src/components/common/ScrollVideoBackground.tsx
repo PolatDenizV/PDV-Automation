@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const TOTAL_FRAMES = 240;
 const INITIAL_PRELOAD = 20;
@@ -17,31 +17,27 @@ export default function ScrollVideoBackground() {
         return `/frames/frame_${frameNum}.jpg`;
     };
 
-    // Preload frames
+    // Preload frames logic
     useEffect(() => {
         const loadFrame = (index: number) => {
-            if (framesRef.current[index]) return Promise.resolve(framesRef.current[index]);
-            return new Promise<HTMLImageElement>((resolve) => {
+            if (framesRef.current[index] || index >= TOTAL_FRAMES) return Promise.resolve();
+            return new Promise<void>((resolve) => {
                 const img = new Image();
                 img.src = getFramePath(index);
                 img.onload = () => {
                     framesRef.current[index] = img;
-                    resolve(img);
+                    resolve();
                 };
             });
         };
 
-        // Load initial batch immediately
+        // Load initial batch for the hero/first view if necessary
+        // In this case, the video starts at innerHeight, so we might not need many frames initially
         for (let i = 0; i < INITIAL_PRELOAD; i++) {
             loadFrame(i);
         }
 
-        // Load rest progressively
-        setTimeout(() => {
-            for (let i = INITIAL_PRELOAD; i < TOTAL_FRAMES; i++) {
-                loadFrame(i);
-            }
-        }, 100);
+        // We will load the rest based on scroll progress in the scroll handler
     }, []);
 
     useEffect(() => {
@@ -90,7 +86,7 @@ export default function ScrollVideoBackground() {
             const scrollY = window.scrollY;
             const innerHeight = window.innerHeight;
 
-            // Fade logic (same as before)
+            // Fade logic
             const fadeStart = innerHeight * 0.5;
             const fadeEnd = innerHeight;
 
@@ -110,7 +106,21 @@ export default function ScrollVideoBackground() {
 
             if (scrollY > videoStartScroll) {
                 const scrollProgress = Math.min(Math.max((scrollY - videoStartScroll) / remainingScrollHeight, 0), 1);
-                targetFrameIndexRef.current = scrollProgress * (TOTAL_FRAMES - 1);
+                const currentTargetFrame = scrollProgress * (TOTAL_FRAMES - 1);
+                targetFrameIndexRef.current = currentTargetFrame;
+
+                // Progressive preloading: Load next 30 frames ahead of current position
+                const startPreload = Math.floor(currentTargetFrame);
+                const endPreload = Math.min(startPreload + 30, TOTAL_FRAMES);
+                for (let i = startPreload; i < endPreload; i++) {
+                    if (!framesRef.current[i]) {
+                        const img = new Image();
+                        img.src = getFramePath(i);
+                        img.onload = () => {
+                            framesRef.current[i] = img;
+                        };
+                    }
+                }
             } else {
                 targetFrameIndexRef.current = 0;
             }
