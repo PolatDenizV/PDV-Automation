@@ -148,10 +148,8 @@ export default function ScrollVideoBackground() {
             <canvas
                 ref={canvasRef}
                 className="w-full h-full block"
-                style={{ filter: 'brightness(0.4)' }}
+                style={{ filter: 'brightness(0.8)' }}
             />
-            {/* Dark overlay for contrast */}
-            <div className="absolute inset-0 bg-black/40"></div>
         </div>
     );
 }
