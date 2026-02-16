@@ -2,17 +2,33 @@ import { useEffect, useRef, useState } from 'react';
 
 const TOTAL_FRAMES = 240;
 const INITIAL_PRELOAD = 20;
+const LERP_FACTOR = 0.05; // Lower = smoother, more "premium" feel
+const PRELOAD_BATCH = 30;
+const FRAME_SKIP = 1; // Set to 2 to use only every other frame (12fps feel from 24fps source)
 
 export default function ScrollVideoBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [opacity, setOpacity] = useState(0);
     const framesRef = useRef<HTMLImageElement[]>([]);
+
+    // Smooth interpolation refs
     const frameIndexRef = useRef(0);
     const targetFrameIndexRef = useRef(0);
+    const lastDrawnFrameRef = useRef(-1);
+
+    // Layout refs to avoid recalculating every frame
+    const layoutRef = useRef({
+        drawWidth: 0,
+        drawHeight: 0,
+        offsetX: 0,
+        offsetY: 0
+    });
+
     const requestRef = useRef<number>();
 
     // Helper to get frame path
     const getFramePath = (index: number) => {
+        // If we skip frames, we still need to map to the original file names
         const frameNum = String(index + 1).padStart(4, '0');
         return `/frames/frame_${frameNum}.jpg`;
     };
@@ -20,58 +36,48 @@ export default function ScrollVideoBackground() {
     // Preload frames logic
     useEffect(() => {
         const loadFrame = (index: number) => {
-            if (framesRef.current[index] || index >= TOTAL_FRAMES) return Promise.resolve();
-            return new Promise<void>((resolve) => {
-                const img = new Image();
-                img.src = getFramePath(index);
-                img.onload = () => {
-                    framesRef.current[index] = img;
-                    resolve();
-                };
-            });
+            if (framesRef.current[index] || index >= TOTAL_FRAMES) return;
+            const img = new Image();
+            img.src = getFramePath(index);
+            img.onload = () => {
+                framesRef.current[index] = img;
+            };
         };
 
-        // Load initial batch for the hero/first view if necessary
-        // In this case, the video starts at innerHeight, so we might not need many frames initially
-        for (let i = 0; i < INITIAL_PRELOAD; i++) {
+        // Load initial batch
+        for (let i = 0; i < INITIAL_PRELOAD; i += FRAME_SKIP) {
             loadFrame(i);
         }
-
-        // We will load the rest based on scroll progress in the scroll handler
     }, []);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-        const ctx = canvas.getContext('2d');
+
+        // Use alpha: false to optimize canvas performance if background is solid
+        const ctx = canvas.getContext('2d', { alpha: false });
         if (!ctx) return;
 
         const drawFrame = () => {
             // Lerp frame index for smoothness
-            frameIndexRef.current += (targetFrameIndexRef.current - frameIndexRef.current) * 0.1;
-            const index = Math.round(frameIndexRef.current);
-            const img = framesRef.current[index];
+            frameIndexRef.current += (targetFrameIndexRef.current - frameIndexRef.current) * LERP_FACTOR;
 
-            if (img && img.complete) {
-                // Handle object-fit: cover behavior
-                const canvasAspect = canvas.width / canvas.height;
-                const imgAspect = img.width / img.height;
-                let drawWidth, drawHeight, offsetX, offsetY;
+            // Round to the nearest frame, taking into account the skip
+            let index = Math.round(frameIndexRef.current / FRAME_SKIP) * FRAME_SKIP;
+            index = Math.min(Math.max(index, 0), TOTAL_FRAMES - 1);
 
-                if (canvasAspect > imgAspect) {
-                    drawWidth = canvas.width;
-                    drawHeight = canvas.width / imgAspect;
-                    offsetX = 0;
-                    offsetY = (canvas.height - drawHeight) / 2;
-                } else {
-                    drawWidth = canvas.height * imgAspect;
-                    drawHeight = canvas.height;
-                    offsetX = (canvas.width - drawWidth) / 2;
-                    offsetY = 0;
+            // LAZY RENDERING: Only draw if the actual frame index has changed
+            if (index !== lastDrawnFrameRef.current) {
+                const img = framesRef.current[index];
+
+                if (img && img.complete) {
+                    const { drawWidth, drawHeight, offsetX, offsetY } = layoutRef.current;
+
+                    // Clear only if needed (not strictly needed with object-fit: cover)
+                    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+                    lastDrawnFrameRef.current = index;
                 }
-
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             }
 
             requestRef.current = requestAnimationFrame(drawFrame);
@@ -80,6 +86,27 @@ export default function ScrollVideoBackground() {
         const handleResize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+
+            // Re-calculate layout for object-fit: cover
+            // Assume 16:9 if no images loaded yet, or use the first loaded image
+            const referenceImg = framesRef.current.find(img => img && img.complete) || { width: 1920, height: 1080 };
+            const canvasAspect = canvas.width / canvas.height;
+            const imgAspect = referenceImg.width / referenceImg.height;
+
+            if (canvasAspect > imgAspect) {
+                layoutRef.current.drawWidth = canvas.width;
+                layoutRef.current.drawHeight = canvas.width / imgAspect;
+                layoutRef.current.offsetX = 0;
+                layoutRef.current.offsetY = (canvas.height - layoutRef.current.drawHeight) / 2;
+            } else {
+                layoutRef.current.drawWidth = canvas.height * imgAspect;
+                layoutRef.current.drawHeight = canvas.height;
+                layoutRef.current.offsetX = (canvas.width - layoutRef.current.drawWidth) / 2;
+                layoutRef.current.offsetY = 0;
+            }
+
+            // Force redraw on next frame
+            lastDrawnFrameRef.current = -1;
         };
 
         const handleScroll = () => {
@@ -93,8 +120,7 @@ export default function ScrollVideoBackground() {
             if (scrollY < fadeStart) {
                 setOpacity(0);
             } else if (scrollY < fadeEnd) {
-                const progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                setOpacity(progress);
+                setOpacity((scrollY - fadeStart) / (fadeEnd - fadeStart));
             } else {
                 setOpacity(1);
             }
@@ -109,10 +135,11 @@ export default function ScrollVideoBackground() {
                 const currentTargetFrame = scrollProgress * (TOTAL_FRAMES - 1);
                 targetFrameIndexRef.current = currentTargetFrame;
 
-                // Progressive preloading: Load next 30 frames ahead of current position
-                const startPreload = Math.floor(currentTargetFrame);
-                const endPreload = Math.min(startPreload + 30, TOTAL_FRAMES);
-                for (let i = startPreload; i < endPreload; i++) {
+                // Progressive preloading: Load frames ahead in batches
+                const startPreload = Math.floor(currentTargetFrame / FRAME_SKIP) * FRAME_SKIP;
+                const endPreload = Math.min(startPreload + PRELOAD_BATCH, TOTAL_FRAMES);
+
+                for (let i = startPreload; i < endPreload; i += FRAME_SKIP) {
                     if (!framesRef.current[i]) {
                         const img = new Image();
                         img.src = getFramePath(i);

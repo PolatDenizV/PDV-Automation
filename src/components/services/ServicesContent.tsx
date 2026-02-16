@@ -106,9 +106,11 @@ export default function ServicesContent() {
       </div>
 
       {/* Main Services Bento Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="flex flex-col gap-32 md:gap-[40vh] py-20">
         {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
+          <div key={index} className={`w-full max-w-4xl mx-auto ${index % 2 === 0 ? 'md:self-start' : 'md:self-end'}`}>
+            <ServiceCard {...service} />
+          </div>
         ))}
       </div>
 
