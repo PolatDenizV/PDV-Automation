@@ -1,4 +1,4 @@
-import { LucideIcon, MessageSquare, Twitter, Mail, Palette, BarChart3, Brain, Users, TrendingUp, Infinity, Clock, Sparkles } from 'lucide-react';
+import { LucideIcon, MessageSquare, Twitter, Mail, Palette, BarChart3, Brain, Users, TrendingUp } from 'lucide-react';
 
 export interface Service {
     icon: LucideIcon;
@@ -62,18 +62,6 @@ export interface SiteContent {
         title: string;
         features: Feature[];
     };
-    pricing: {
-        title: string;
-        description: string;
-        box: {
-            title: string;
-            subtitle: string;
-            price: string;
-            period: string;
-            cta: string;
-        };
-        benefits: Benefit[];
-    };
     contact: {
         header: {
             title: string;
@@ -129,53 +117,63 @@ export const siteContent: SiteContent = {
             },
             {
                 icon: Twitter,
-                title: "Twitter Engine",
-                description: "AI-generated content posted 24/7. Optimized for engagement and brand voice without a social manager.",
+                title: "Social Media Engine",
+                description: "AI-generated content published 24/7 across Twitter, Instagram, Telegram, and Facebook — optimized for engagement, growth, and brand authority without a social manager.",
                 path: "/services/twitter-automation",
                 details: [
-                    "• AI content generation",
-                    "• Automated posting schedule",
-                    "• Engagement optimization",
-                    "• Brand voice protection"
+                    "- Multi-platform automation (Twitter, Instagram, Telegram, Facebook)",
+                    "- AI content generation",
+                    "- Automated posting schedules",
+                    "- Engagement optimization logic",
+                    "- Brand voice protection",
+                    "- Growth-focused analytics"
                 ],
                 className: "md:col-span-1"
             },
             {
                 icon: Mail,
                 title: "Cold Email B2B",
-                description: "Send hundreds of context-aware, personalized emails daily. High response rates (~25%) without manual research.",
+                description: "Launch AI-powered outbound systems that generate hundreds of qualified B2B leads on demand and convert them with deeply personalized outreach.",
                 path: "/services/email-automation",
                 details: [
-                    "• AI-driven personalization",
-                    "• LinkedIn integration",
-                    "• Email warmup protocols",
-                    "• context-aware icebreakers"
+                    "- On-demand lead generation engine",
+                    "- AI-driven personalization at scale",
+                    "- Context-aware icebreakers",
+                    "- LinkedIn enrichment integration",
+                    "- Email warmup protocols",
+                    "- High deliverability infrastructure"
                 ],
                 className: "md:col-span-1"
             },
             {
                 icon: Palette,
                 title: "Premium Web Design",
-                description: "High-end websites built in 24 hours with automated lead capture and instant AI follow-up systems.",
+                description: "High-end websites engineered to project authority, convert instantly, and rank in the age of AI search. Built in 24 hours with automated lead capture and AI-powered follow-up systems.",
                 path: "/services/web-design",
                 details: [
-                    "• 24-hour turnaround",
-                    "• Automated lead capture",
-                    "• AI Email/Phone agents",
-                    "• Modern UI/UX stack"
+                    "- 24-hour premium build",
+                    "- Conversion-focused modern UI/UX",
+                    "- Stripe payment integration",
+                    "- Full eCommerce store setup",
+                    "- Automated lead capture systems",
+                    "- AI email & phone follow-up agents",
+                    "- Answer Engine Optimization (AEO) for AI-driven search visibility"
                 ],
                 className: "md:col-span-2"
             },
             {
                 icon: BarChart3,
                 title: "Amazon Ads",
-                description: "API-driven Amazon Sponsored Ads optimization. Data-driven PPC without daily manual work.",
+                description: "API-driven Amazon Sponsored Ads optimization with continuous competitor intelligence and keyword refinement. Stop bleeding time and money on PPC.",
                 path: "/services/amazon-ads",
                 details: [
-                    "• Automated bidding & optimization",
-                    "• API-driven management",
-                    "• Performance analytics",
-                    "• Authorized seller integration"
+                    "- Automated bidding & campaign optimization",
+                    "- Real-time competitor analysis",
+                    "- Amazon search term report mining",
+                    "- Automated keyword & negative keyword refinement",
+                    "- API-driven performance management",
+                    "- Advanced PPC analytics",
+                    "- Authorized seller integration"
                 ],
                 className: "md:col-span-3"
             }
@@ -214,31 +212,6 @@ export const siteContent: SiteContent = {
                 title: 'Proven Results',
                 description: 'Track record of boosting efficiency and profitability for our clients.',
             },
-        ]
-    },
-    pricing: {
-        title: "Your Personal AI Workforce",
-        description: "Invest once in a custom automation system and gain a digital workforce that runs 24/7/365. Minimal monthly maintenance. No per-seat fees. No scaling headaches.",
-        box: {
-            title: "Lifetime Access",
-            subtitle: "One-time payment, forever value",
-            price: "$999",
-            period: "/ lifetime",
-            cta: "Get Started Now"
-        },
-        benefits: [
-            {
-                icon: Infinity,
-                title: "Perpetual Access",
-                description: "Your personal AI workforce that operates indefinitely, growing with your business.",
-                color: "text-blue-400"
-            },
-            {
-                icon: Clock,
-                title: "24/7 Operation",
-                description: "A tireless system that works around the clock, requiring only minimal maintenance costs.",
-                color: "text-indigo-400"
-            }
         ]
     },
     contact: {

@@ -11,7 +11,7 @@ function stripHtml(text: string): string {
 }
 
 function generateMarkdown() {
-    const { hero, services, about, pricing, contact, faq, brandName } = siteContent;
+    const { hero, services, about, contact, faq, brandName } = siteContent;
 
     let md = `# ${brandName}\n\n`;
 
@@ -48,20 +48,6 @@ function generateMarkdown() {
         md += `### ${stripHtml(feature.title)}\n`;
         md += `${stripHtml(feature.description)}\n\n`;
     });
-
-    // Pricing
-    md += `## ${stripHtml(pricing.title)}\n`;
-    md += `${stripHtml(pricing.description)}\n\n`;
-
-    md += `### ${stripHtml(pricing.box.title)}\n`;
-    md += `${stripHtml(pricing.box.subtitle)}\n`;
-    md += `Price: ${stripHtml(pricing.box.price)} ${stripHtml(pricing.box.period)}\n\n`;
-
-    md += `### Benefits\n`;
-    pricing.benefits.forEach(benefit => {
-        md += `- **${stripHtml(benefit.title)}**: ${stripHtml(benefit.description)}\n`;
-    });
-    md += `\n`;
 
     // FAQ
     md += `## ${stripHtml(faq.title)}\n`;

@@ -85,7 +85,7 @@ export default function ServiceCard({ icon: Icon, title, description, details, c
                   <div key={index} className="flex items-start gap-3 group/item">
                     <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 group-hover/item:scale-150 transition-transform duration-300" />
                     <p className="text-gray-300 text-sm leading-snug">
-                      {detail.replace('• ', '')}
+                      {detail.replace(/^[•-]\s*/, '')}
                     </p>
                   </div>
                 ))}

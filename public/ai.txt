@@ -24,33 +24,43 @@ Custom AI agents integrated into your stack — capturing leads, booking calls, 
 • Human handoff logic
 • Telegram & web integrations
 
-#### Twitter Engine
-AI-generated content posted 24/7. Optimized for engagement and brand voice without a social manager.
-• AI content generation
-• Automated posting schedule
-• Engagement optimization
-• Brand voice protection
+#### Social Media Engine
+AI-generated content published 24/7 across Twitter, Instagram, Telegram, and Facebook — optimized for engagement, growth, and brand authority without a social manager.
+- Multi-platform automation (Twitter, Instagram, Telegram, Facebook)
+- AI content generation
+- Automated posting schedules
+- Engagement optimization logic
+- Brand voice protection
+- Growth-focused analytics
 
 #### Cold Email B2B
-Send hundreds of context-aware, personalized emails daily. High response rates (~25%) without manual research.
-• AI-driven personalization
-• LinkedIn integration
-• Email warmup protocols
-• context-aware icebreakers
+Launch AI-powered outbound systems that generate hundreds of qualified B2B leads on demand and convert them with deeply personalized outreach.
+- On-demand lead generation engine
+- AI-driven personalization at scale
+- Context-aware icebreakers
+- LinkedIn enrichment integration
+- Email warmup protocols
+- High deliverability infrastructure
 
 #### Premium Web Design
-High-end websites built in 24 hours with automated lead capture and instant AI follow-up systems.
-• 24-hour turnaround
-• Automated lead capture
-• AI Email/Phone agents
-• Modern UI/UX stack
+High-end websites engineered to project authority, convert instantly, and rank in the age of AI search. Built in 24 hours with automated lead capture and AI-powered follow-up systems.
+- 24-hour premium build
+- Conversion-focused modern UI/UX
+- Stripe payment integration
+- Full eCommerce store setup
+- Automated lead capture systems
+- AI email & phone follow-up agents
+- Answer Engine Optimization (AEO) for AI-driven search visibility
 
 #### Amazon Ads
-API-driven Amazon Sponsored Ads optimization. Data-driven PPC without daily manual work.
-• Automated bidding & optimization
-• API-driven management
-• Performance analytics
-• Authorized seller integration
+API-driven Amazon Sponsored Ads optimization with continuous competitor intelligence and keyword refinement. Stop bleeding time and money on PPC.
+- Automated bidding & campaign optimization
+- Real-time competitor analysis
+- Amazon search term report mining
+- Automated keyword & negative keyword refinement
+- API-driven performance management
+- Advanced PPC analytics
+- Authorized seller integration
 
 ## Why Choose PDV Automation?
 ### Custom AI Strategies
@@ -61,17 +71,6 @@ Work with a team of experienced AI specialists who understand your goals.
 
 ### Proven Results
 Track record of boosting efficiency and profitability for our clients.
-
-## Your Personal AI Workforce
-Invest once in a custom automation system and gain a digital workforce that runs 24/7/365. Minimal monthly maintenance. No per-seat fees. No scaling headaches.
-
-### Lifetime Access
-One-time payment, forever value
-Price: $999 / lifetime
-
-### Benefits
-- **Perpetual Access**: Your personal AI workforce that operates indefinitely, growing with your business.
-- **24/7 Operation**: A tireless system that works around the clock, requiring only minimal maintenance costs.
 
 ## Frequently Asked Questions
 ### How long until I see results?
