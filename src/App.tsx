@@ -1,17 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { motion } from 'framer-motion';
 import HomePage from './pages/HomePage';
 import TwitterAutomationPage from './pages/TwitterAutomationPage';
 import EmailAutomationPage from './pages/EmailAutomationPage';
 import WebDesignPage from './pages/WebDesignPage';
 import Navbar from './components/common/Navbar';
 
+
 function App() {
   return (
     <>
-      <div className="background-overlay" />
-      <div className="content-wrapper">
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="fixed inset-0 bg-[#020617] z-[9999] pointer-events-none"
+      />
+      <div className="content-wrapper relative z-[10]">
         <Router>
           <Navbar />
           <Routes>

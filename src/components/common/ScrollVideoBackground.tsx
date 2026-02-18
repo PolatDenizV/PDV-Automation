@@ -113,9 +113,9 @@ export default function ScrollVideoBackground() {
             const scrollY = window.scrollY;
             const innerHeight = window.innerHeight;
 
-            // Fade logic
-            const fadeStart = innerHeight * 0.5;
-            const fadeEnd = innerHeight;
+            // Fade logic: Reveal much earlier
+            const fadeStart = innerHeight * 0.1;
+            const fadeEnd = innerHeight * 0.8;
 
             if (scrollY < fadeStart) {
                 setOpacity(0);
@@ -169,8 +169,11 @@ export default function ScrollVideoBackground() {
 
     return (
         <div
-            className="fixed inset-0 -z-10 transition-opacity duration-300 pointer-events-none overflow-hidden"
-            style={{ opacity }}
+            className="fixed inset-0 z-[0] transition-opacity duration-700 pointer-events-none overflow-hidden"
+            style={{
+                opacity: Math.max(opacity, 0),
+                background: 'rgba(2, 6, 23, 0.5)'
+            }}
         >
             <canvas
                 ref={canvasRef}

@@ -3,7 +3,7 @@ import HeroContent from './HeroContent';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-slate-950">
+    <section className="relative min-h-screen overflow-hidden bg-transparent">
       {/* Background Image / Abstract Texture */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
