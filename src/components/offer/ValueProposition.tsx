@@ -1,21 +1,8 @@
-import { Infinity, Clock } from 'lucide-react';
-
-const benefits = [
-  {
-    icon: Infinity,
-    title: "Perpetual Access",
-    description: "Your personal AI workforce that operates indefinitely, growing with your business.",
-    color: "text-blue-400"
-  },
-  {
-    icon: Clock,
-    title: "24/7 Operation",
-    description: "A tireless system that works around the clock, requiring only minimal maintenance costs.",
-    color: "text-indigo-400"
-  }
-];
+import { siteContent } from '../../data/siteContent';
 
 export default function ValueProposition() {
+  const { pricing } = siteContent;
+
   return (
     <div className="relative group max-w-5xl mx-auto">
       {/* Outer Glow */}
@@ -29,7 +16,7 @@ export default function ValueProposition() {
 
         {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 relative z-10">
-          {benefits.map((benefit, index) => (
+          {pricing.benefits.map((benefit, index) => (
             <div key={index} className="flex flex-col items-center text-center group/benefit">
               <div className="relative mb-8">
                 <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-2xl transform 

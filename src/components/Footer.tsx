@@ -1,24 +1,27 @@
 import { Bot, Linkedin, Twitter, Mail } from 'lucide-react';
 import EmailTooltip from './common/EmailTooltip';
+import { siteContent } from '../data/siteContent';
 
 export default function Footer() {
+  const { brandName, footer } = siteContent;
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center gap-2 mb-6 md:mb-0">
             <Bot className="w-8 h-8 text-blue-400" />
-            <span className="text-2xl font-bold">PDV Automation</span>
+            <span className="text-2xl font-bold">{brandName}</span>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href={footer.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="https://x.com/PolatskiD" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+            <a href={footer.social.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
               <Twitter className="w-6 h-6" />
             </a>
             <EmailTooltip>
-              <a href="mailto:polat@pdvautomations.com" className="hover:text-blue-400 transition-colors">
+              <a href={`mailto:${footer.social.email}`} className="hover:text-blue-400 transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </EmailTooltip>
@@ -27,7 +30,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 mb-4 md:mb-0">
-              © 2024 PDV Automation. All rights reserved.
+              {footer.copyright}
             </div>
             <div className="flex gap-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -49,3 +52,4 @@ export default function Footer() {
     </footer>
   );
 }
+

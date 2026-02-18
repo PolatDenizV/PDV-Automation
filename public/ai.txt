@@ -1,0 +1,93 @@
+# PDV Automation
+
+## Inhuman Output. Fraction-of-Human Cost.
+I build AI-powered automation systems that replace repetitive human labor — from content and outreach to ads and customer handling — so your business scales 24/7 without hiring.
+
+## Automation handles execution. AI handles thinking.
+High-performance systems tailored to your business — not templates, not subscriptions, not SaaS fluff.
+
+### The Problem
+Standard automation is rigid and still requires human babysitting for corner cases.
+
+### The Missing Piece
+Isolated AI is powerful but creates more work manually copying data between tools.
+
+### The Solution
+AI Automation links them — systems that think, decide, and act across your entire stack.
+
+### Key Services
+#### AI Chatbot Systems
+Custom AI agents integrated into your stack — capturing leads, booking calls, and handling 24/7 support without human intervention.
+• CRM-connected lead capture
+• 24/7 automated support
+• Appointment & call booking
+• Human handoff logic
+• Telegram & web integrations
+
+#### Twitter Engine
+AI-generated content posted 24/7. Optimized for engagement and brand voice without a social manager.
+• AI content generation
+• Automated posting schedule
+• Engagement optimization
+• Brand voice protection
+
+#### Cold Email B2B
+Send hundreds of context-aware, personalized emails daily. High response rates (~25%) without manual research.
+• AI-driven personalization
+• LinkedIn integration
+• Email warmup protocols
+• context-aware icebreakers
+
+#### Premium Web Design
+High-end websites built in 24 hours with automated lead capture and instant AI follow-up systems.
+• 24-hour turnaround
+• Automated lead capture
+• AI Email/Phone agents
+• Modern UI/UX stack
+
+#### Amazon Ads
+API-driven Amazon Sponsored Ads optimization. Data-driven PPC without daily manual work.
+• Automated bidding & optimization
+• API-driven management
+• Performance analytics
+• Authorized seller integration
+
+## Why Choose PDV Automation?
+### Custom AI Strategies
+Tailored solutions for every business need, designed to maximize your potential.
+
+### Expert Guidance
+Work with a team of experienced AI specialists who understand your goals.
+
+### Proven Results
+Track record of boosting efficiency and profitability for our clients.
+
+## Your Personal AI Workforce
+Invest once in a custom automation system and gain a digital workforce that runs 24/7/365. Minimal monthly maintenance. No per-seat fees. No scaling headaches.
+
+### Lifetime Access
+One-time payment, forever value
+Price: $999 / lifetime
+
+### Benefits
+- **Perpetual Access**: Your personal AI workforce that operates indefinitely, growing with your business.
+- **24/7 Operation**: A tireless system that works around the clock, requiring only minimal maintenance costs.
+
+## Frequently Asked Questions
+### How long until I see results?
+Most systems are deployed within 24-48 hours and start showing efficiency gains immediately.
+
+### Do I need technical knowledge?
+Zero. I build the entire system and handle the integration. You just use the output.
+
+### What is the maintenance cost?
+Minimal. Mostly just the API costs (OpenAI/Claude) which are pay-as-you-go based on your usage.
+
+## Let’s Build Your Automation System
+Tell me what you want to replace, scale, or eliminate — I’ll tell you what’s possible.
+
+### Why PDV Automation
+- Built manually, not templated
+- No outsourcing or agency layers
+- Systems designed around your workflow
+- You own the automation — not a subscription

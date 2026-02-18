@@ -1,11 +1,21 @@
+import React from 'react';
+import { siteContent } from '../../data/siteContent';
+
 export default function ContactHeader() {
+  const { contact } = siteContent;
+
   return (
     <div className="text-center mb-16">
       <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-gradient">
-        Let’s Build Your<br />Automation System
+        {contact.header.title.split('<br />').map((part, i, arr) => (
+          <React.Fragment key={i}>
+            {part}
+            {i !== arr.length - 1 && <br />}
+          </React.Fragment>
+        ))}
       </h2>
       <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-medium">
-        Tell me what you want to replace, scale, or eliminate — I’ll tell you what’s possible.
+        {contact.header.subtitle}
       </p>
     </div>
   );
